@@ -5,8 +5,6 @@
 -- Dumped from database version 16.8 (Debian 16.8-1.pgdg120+1)
 -- Dumped by pg_dump version 17.2
 
--- Started on 2025-08-07 19:08:51
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -24,7 +22,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 215 (class 1259 OID 589454)
 -- Name: alembic_version; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -36,7 +33,6 @@ CREATE TABLE public.alembic_version (
 ALTER TABLE public.alembic_version OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 589619)
 -- Name: buildings; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -51,7 +47,6 @@ CREATE TABLE public.buildings (
 ALTER TABLE public.buildings OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 589618)
 -- Name: buildings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -67,8 +62,6 @@ CREATE SEQUENCE public.buildings_id_seq
 ALTER SEQUENCE public.buildings_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3403 (class 0 OID 0)
--- Dependencies: 216
 -- Name: buildings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -76,7 +69,6 @@ ALTER SEQUENCE public.buildings_id_seq OWNED BY public.buildings.id;
 
 
 --
--- TOC entry 219 (class 1259 OID 589626)
 -- Name: economic_activities; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -90,7 +82,6 @@ CREATE TABLE public.economic_activities (
 ALTER TABLE public.economic_activities OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 589625)
 -- Name: economic_activities_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -106,8 +97,6 @@ CREATE SEQUENCE public.economic_activities_id_seq
 ALTER SEQUENCE public.economic_activities_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3404 (class 0 OID 0)
--- Dependencies: 218
 -- Name: economic_activities_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -115,7 +104,6 @@ ALTER SEQUENCE public.economic_activities_id_seq OWNED BY public.economic_activi
 
 
 --
--- TOC entry 222 (class 1259 OID 589650)
 -- Name: organization_activities; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -128,7 +116,6 @@ CREATE TABLE public.organization_activities (
 ALTER TABLE public.organization_activities OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 589667)
 -- Name: organization_phones; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -142,7 +129,6 @@ CREATE TABLE public.organization_phones (
 ALTER TABLE public.organization_phones OWNER TO postgres;
 
 --
--- TOC entry 223 (class 1259 OID 589666)
 -- Name: organization_phones_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -158,8 +144,6 @@ CREATE SEQUENCE public.organization_phones_id_seq
 ALTER SEQUENCE public.organization_phones_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3405 (class 0 OID 0)
--- Dependencies: 223
 -- Name: organization_phones_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -167,7 +151,6 @@ ALTER SEQUENCE public.organization_phones_id_seq OWNED BY public.organization_ph
 
 
 --
--- TOC entry 221 (class 1259 OID 589638)
 -- Name: organizations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -181,7 +164,6 @@ CREATE TABLE public.organizations (
 ALTER TABLE public.organizations OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 589637)
 -- Name: organizations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -197,8 +179,6 @@ CREATE SEQUENCE public.organizations_id_seq
 ALTER SEQUENCE public.organizations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3406 (class 0 OID 0)
--- Dependencies: 220
 -- Name: organizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -206,7 +186,6 @@ ALTER SEQUENCE public.organizations_id_seq OWNED BY public.organizations.id;
 
 
 --
--- TOC entry 3226 (class 2604 OID 589622)
 -- Name: buildings id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -214,7 +193,6 @@ ALTER TABLE ONLY public.buildings ALTER COLUMN id SET DEFAULT nextval('public.bu
 
 
 --
--- TOC entry 3227 (class 2604 OID 589629)
 -- Name: economic_activities id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -222,7 +200,6 @@ ALTER TABLE ONLY public.economic_activities ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3229 (class 2604 OID 589670)
 -- Name: organization_phones id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -230,7 +207,6 @@ ALTER TABLE ONLY public.organization_phones ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3228 (class 2604 OID 589641)
 -- Name: organizations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -238,8 +214,6 @@ ALTER TABLE ONLY public.organizations ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3388 (class 0 OID 589454)
--- Dependencies: 215
 -- Data for Name: alembic_version; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -249,8 +223,6 @@ cc8d1590d062
 
 
 --
--- TOC entry 3390 (class 0 OID 589619)
--- Dependencies: 217
 -- Data for Name: buildings; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -260,8 +232,6 @@ COPY public.buildings (id, address, latitude, longitude) FROM stdin;
 
 
 --
--- TOC entry 3392 (class 0 OID 589626)
--- Dependencies: 219
 -- Data for Name: economic_activities; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -279,8 +249,6 @@ COPY public.economic_activities (id, name, parent_id) FROM stdin;
 
 
 --
--- TOC entry 3395 (class 0 OID 589650)
--- Dependencies: 222
 -- Data for Name: organization_activities; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -293,8 +261,6 @@ COPY public.organization_activities (activity_id, organization_id) FROM stdin;
 
 
 --
--- TOC entry 3397 (class 0 OID 589667)
--- Dependencies: 224
 -- Data for Name: organization_phones; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -306,8 +272,6 @@ COPY public.organization_phones (id, phone, organization_id) FROM stdin;
 
 
 --
--- TOC entry 3394 (class 0 OID 589638)
--- Dependencies: 221
 -- Data for Name: organizations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -318,8 +282,6 @@ COPY public.organizations (id, tittle, building_id) FROM stdin;
 
 
 --
--- TOC entry 3407 (class 0 OID 0)
--- Dependencies: 216
 -- Name: buildings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -327,8 +289,6 @@ SELECT pg_catalog.setval('public.buildings_id_seq', 1, true);
 
 
 --
--- TOC entry 3408 (class 0 OID 0)
--- Dependencies: 218
 -- Name: economic_activities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -336,8 +296,6 @@ SELECT pg_catalog.setval('public.economic_activities_id_seq', 9, true);
 
 
 --
--- TOC entry 3409 (class 0 OID 0)
--- Dependencies: 223
 -- Name: organization_phones_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -345,8 +303,6 @@ SELECT pg_catalog.setval('public.organization_phones_id_seq', 3, true);
 
 
 --
--- TOC entry 3410 (class 0 OID 0)
--- Dependencies: 220
 -- Name: organizations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -354,7 +310,6 @@ SELECT pg_catalog.setval('public.organizations_id_seq', 2, true);
 
 
 --
--- TOC entry 3231 (class 2606 OID 589458)
 -- Name: alembic_version alembic_version_pkc; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -363,7 +318,6 @@ ALTER TABLE ONLY public.alembic_version
 
 
 --
--- TOC entry 3233 (class 2606 OID 589624)
 -- Name: buildings buildings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -372,7 +326,6 @@ ALTER TABLE ONLY public.buildings
 
 
 --
--- TOC entry 3235 (class 2606 OID 589631)
 -- Name: economic_activities economic_activities_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -381,7 +334,6 @@ ALTER TABLE ONLY public.economic_activities
 
 
 --
--- TOC entry 3239 (class 2606 OID 589672)
 -- Name: organization_phones organization_phones_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -390,7 +342,6 @@ ALTER TABLE ONLY public.organization_phones
 
 
 --
--- TOC entry 3237 (class 2606 OID 589643)
 -- Name: organizations organizations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -399,7 +350,6 @@ ALTER TABLE ONLY public.organizations
 
 
 --
--- TOC entry 3240 (class 2606 OID 589743)
 -- Name: economic_activities economic_activities_parent_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -408,7 +358,6 @@ ALTER TABLE ONLY public.economic_activities
 
 
 --
--- TOC entry 3242 (class 2606 OID 589759)
 -- Name: organization_activities organization_activities_activity_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -417,7 +366,6 @@ ALTER TABLE ONLY public.organization_activities
 
 
 --
--- TOC entry 3243 (class 2606 OID 589764)
 -- Name: organization_activities organization_activities_organization_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -426,7 +374,6 @@ ALTER TABLE ONLY public.organization_activities
 
 
 --
--- TOC entry 3244 (class 2606 OID 589713)
 -- Name: organization_phones organization_phones_organization_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -435,15 +382,12 @@ ALTER TABLE ONLY public.organization_phones
 
 
 --
--- TOC entry 3241 (class 2606 OID 589688)
 -- Name: organizations organizations_building_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.organizations
     ADD CONSTRAINT organizations_building_id_fkey FOREIGN KEY (building_id) REFERENCES public.buildings(id);
 
-
--- Completed on 2025-08-07 19:08:52
 
 --
 -- PostgreSQL database dump complete
