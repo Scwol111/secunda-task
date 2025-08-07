@@ -1,0 +1,58 @@
+volumes:
+  pg_data:
+  pg_logs:
+
+services:
+
+  postgres-first-load:
+    image: postgres:16
+    restart: no
+    command: psql -h postgres -U postgres -d secunda -w -f /db_dump.sql
+    volumes:
+      - ./db_dump.sql:/db_dump.sql
+    environment:
+      - PGPASSWORD=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - pg_logs:/var/log
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+
+  migrator:
+    build: .
+    image: fast_api_service
+    container_name: fast_api_migrator
+    pull_policy: never
+    working_dir: /service
+    entrypoint: ["poetry", "run", "alembic", "upgrade", "head"]
+    restart: no
+    environment:
+      - DB_URL=postgresql://postgres:postgres@postgres/postgres
+    depends_on:
+      - postgres
+      - postgres-first-load
+
+  api_service:
+    build: .
+    container_name: fast_api_service
+    image: fast_api_service
+    pull_policy: never
+    working_dir: /service
+    entrypoint: ["poetry", "run", "uvicorn", "--host", "0.0.0.0", "main:app"]
+    restart: unless-stopped
+    depends_on:
+      - migrator
+    environment:
+      - DB_URL=postgresql://postgres:postgres@postgres/postgres
+      - API_KEY=123456
+    ports:
+      - 8000:8000
