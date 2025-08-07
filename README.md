@@ -4,7 +4,7 @@ Test task for secunda company
 
 ## Task
 
-[Task file](Тестовое задание Backend  python .docx)
+[Task file] (Тестовое задание Backend  python .docx)
 
 ## Project setup
 
